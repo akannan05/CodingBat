@@ -43,15 +43,7 @@ def end_other(a,b):
 #Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but 
 # "x.xyz" does not.
 def xyz_there(str):
-    bool = False
     for i in range(len(str)-2):
-        if str[i:i+3] == "xyz":
-            bool = True
-            if i>1:
-                if str[i-1:i] == ".":
-                    bool = False
-    return bool
-
-
-
-    
+        if str[i:i+3] == "xyz" and str[i-1:i] != ".":
+            return True
+    return False 

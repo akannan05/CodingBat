@@ -46,15 +46,33 @@ def reverse3(nums):
             nums[i] = store
     return nums
 
-#
+# Given an array of ints length 3, figure out which is larger, the first or last element in the array, 
+# and set all the other elements to be that value. Return the changed array.
+def max_end3(nums):
+    for j in range(len(nums)):
+        nums[j] = max(nums[0], nums[-1])
+    return nums
 
+# Given an array of ints, return the sum of the first 2 elements in the array. 
+# If the array length is less than 2, just sum up the elements that exist, returning 0 if the array 
+# is length 0.
+def sum2(nums):
+    sum = 0
+    if len(nums) < 2:
+        for i in range(len(nums)):
+           sum += nums[i]
+        return sum
+    return nums[0] + nums[1]
 
-        
+# Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements.
+def middle_way(a,b):
+    return [a[1],b[1]]
 
+# Given an array of ints, return a new array length 2 containing the first and last elements from the 
+# original array. The original array will be length 1 or more.
+def make_ends(nums):
+    return [nums[0],nums[-1]]
 
-
-
-
-
-
-
+# Given an int array length 2, return True if it contains a 2 or a 3.
+def has23(nums):
+    return 2 in nums or 3 in nums
